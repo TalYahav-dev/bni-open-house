@@ -3,7 +3,7 @@ import { Redis } from '@upstash/redis';
 
 const HOST_IDS = ['1', '2', '3', '4', '5', '6', '7'];
 const CAPACITIES: Record<string, number> = {
-  '1': 6, '2': 6, '3': 6, '4': 6, '5': 6, '6': 6, '7': 6,
+  '1': 9, '2': 6, '3': 6, '4': 6, '5': 6, '6': 6, '7': 6,
 };
 
 interface Signup {

@@ -8,7 +8,7 @@ export const hosts: OpenHouseHost[] = [
     day: 'יום ראשון',
     date: '29.3.2026',
     time: '21:30',
-    capacity: 6,
+    capacity: 9,
     hasSafeRoom: true,
     hostingNote: '',
   },

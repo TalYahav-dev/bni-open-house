@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Redis } from '@upstash/redis';
 
 const hosts = [
-  { id: '1', name: 'טל יהב', area: 'הפרג 8, רחובות', day: 'יום ראשון', date: '29.3.2026', time: '21:30', capacity: 6, hasSafeRoom: true, hostingNote: '' },
+  { id: '1', name: 'טל יהב', area: 'הפרג 8, רחובות', day: 'יום ראשון', date: '29.3.2026', time: '21:30', capacity: 9, hasSafeRoom: true, hostingNote: '' },
   { id: '2', name: 'רינת נצרתי', area: '', day: 'יום ראשון', date: '29.3.2026', time: '11:00', capacity: 6, hasSafeRoom: true, hostingNote: '' },
   { id: '3', name: 'ריטה מושיאקוב', area: 'התבור 7, באר יעקב', day: 'יום שני', date: '30.3.2026', time: '11:00', capacity: 6, hasSafeRoom: true, hostingNote: '' },
   { id: '4', name: 'נדב וינינגר', area: 'חיים מלר 26, מזכרת בתיה', day: 'יום שני', date: '30.3.2026', time: '15:00', capacity: 6, hasSafeRoom: true, hostingNote: '' },
