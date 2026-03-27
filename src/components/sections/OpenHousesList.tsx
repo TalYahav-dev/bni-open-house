@@ -1,11 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import type { HostWithSignups } from '../../types';
+import { hosts as staticHosts } from '../../data/hosts';
 import { HostCard } from '../ui/HostCard';
 import { Button } from '../ui/Button';
 
+// Start with static data (0 signups), then hydrate from API
+function initialHosts(): HostWithSignups[] {
+  return staticHosts.map((h) => ({ ...h, signupCount: 0 }));
+}
+
 export function OpenHousesList() {
-  const [hosts, setHosts] = useState<HostWithSignups[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [hosts, setHosts] = useState<HostWithSignups[]>(initialHosts);
   const [signupModal, setSignupModal] = useState<string | null>(null);
   const [signupName, setSignupName] = useState('');
   const [signupPhone, setSignupPhone] = useState('');
@@ -14,15 +19,16 @@ export function OpenHousesList() {
   const [signupError, setSignupError] = useState('');
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  // Fetch real signup counts from API
   const fetchHosts = async () => {
     try {
       const res = await fetch('/api/hosts');
-      const data = await res.json();
-      setHosts(data);
+      if (res.ok) {
+        const data = await res.json();
+        setHosts(data);
+      }
     } catch {
-      console.error('Failed to fetch hosts');
-    } finally {
-      setLoading(false);
+      // API unavailable — keep static data
     }
   };
 
@@ -70,13 +76,13 @@ export function OpenHousesList() {
       }
 
       setSignupSuccess(true);
-      fetchHosts();
+      fetchHosts(); // Refresh counts
 
       setTimeout(() => {
         closeModal();
       }, 2000);
     } catch (err: any) {
-      setSignupError(err.message);
+      setSignupError(err.message || 'שגיאה בהרשמה, נסו שוב');
     } finally {
       setSubmitting(false);
     }
@@ -118,23 +124,19 @@ export function OpenHousesList() {
           בחרו מפגש שמתאים לכם והירשמו
         </p>
 
-        {loading ? (
-          <div className="text-center text-muted py-12">טוען...</div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {hosts.map((host, i) => (
-              <div
-                key={host.id}
-                className={`animate-on-scroll stagger-${Math.min(i + 1, 5)}`}
-              >
-                <HostCard
-                  host={host}
-                  onSignup={(id) => setSignupModal(id)}
-                />
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {hosts.map((host, i) => (
+            <div
+              key={host.id}
+              className={`animate-on-scroll stagger-${Math.min(i + 1, 5)}`}
+            >
+              <HostCard
+                host={host}
+                onSignup={(id) => setSignupModal(id)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Signup Modal */}

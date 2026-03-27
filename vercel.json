@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/api/hosts", "destination": "/api/hosts" },
+    { "source": "/api/signups", "destination": "/api/signups" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
