@@ -67,4 +67,15 @@ export const hosts: OpenHouseHost[] = [
     hasSafeRoom: true,
     hostingNote: '',
   },
+  {
+    id: '7',
+    name: 'שרון רונס-מקמל',
+    area: 'פרופ׳ יהודית בירק 3, רחובות',
+    day: 'יום שני',
+    date: '30.3.2026',
+    time: '09:30',
+    capacity: 6,
+    hasSafeRoom: true,
+    hostingNote: '',
+  },
 ];
