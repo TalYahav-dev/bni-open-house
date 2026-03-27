@@ -21,7 +21,7 @@ export function HostCard({ host, onSignup }: HostCardProps) {
 
   return (
     <div
-      className={`bg-card rounded-2xl border border-border p-6 flex flex-col gap-4 shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-all duration-300 ${
+      className={`bg-card rounded-2xl border border-border p-6 flex flex-col gap-4 h-full shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-all duration-300 ${
         isFull
           ? 'opacity-50 grayscale-[30%]'
           : 'hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] hover:-translate-y-1 cursor-default'
@@ -70,7 +70,7 @@ export function HostCard({ host, onSignup }: HostCardProps) {
             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" />
             <circle cx="9" cy="7" r="4" />
           </svg>
-          {host.capacity} מקומות
+          נותרו {remaining} מקומות
         </span>
       </div>
 

@@ -116,7 +116,7 @@ export function OpenHousesList() {
         <path d="M12.65 10A5.99 5.99 0 007 6c-3.31 0-6 2.69-6 6s2.69 6 6 6a5.99 5.99 0 005.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
       </svg>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
         <h2 className="animate-on-scroll text-center text-charcoal font-bold text-3xl sm:text-4xl mb-4">
           הבתים הפתוחים
         </h2>
@@ -124,11 +124,11 @@ export function OpenHousesList() {
           בחרו מפגש שמתאים לכם והירשמו
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {hosts.map((host, i) => (
             <div
               key={host.id}
-              className={`animate-on-scroll stagger-${Math.min(i + 1, 5)}`}
+              className={`animate-on-scroll stagger-${Math.min(i + 1, 5)} flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]`}
             >
               <HostCard
                 host={host}
