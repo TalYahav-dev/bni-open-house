@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="py-16 bg-cream border-t border-sand relative overflow-hidden">
+    <footer className="py-16 bg-cream border-t border-sand relative overflow-hidden w-full flex flex-col items-center">
       {/* Subtle network echo in footer */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 800 200" fill="none" aria-hidden="true">
         {[[100, 50, 250, 100], [250, 100, 400, 40], [400, 40, 550, 120], [550, 120, 700, 60]].map(([x1, y1, x2, y2], i) => (
@@ -16,7 +16,7 @@ export function Footer() {
         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
       </svg>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-3xl px-6 text-center">
         {/* Closing quote */}
         <p className="text-charcoal text-xl sm:text-2xl font-light leading-relaxed mb-8">
           לפעמים כל מה שצריך כדי להמשיך קדימה,

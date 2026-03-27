@@ -60,7 +60,7 @@ export function HowItWorks() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 sm:py-28 bg-cream-dark noise-overlay relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 sm:py-28 bg-cream-dark noise-overlay relative overflow-hidden w-full flex flex-col items-center">
       {/* Background decoration */}
       <div className="absolute top-10 left-[5%] w-64 h-64 rounded-full bg-sage/[0.03] blur-3xl floating-shape-4" />
       <div className="absolute bottom-10 right-[8%] w-48 h-48 rounded-full bg-copper/[0.04] blur-2xl floating-shape-1" />
@@ -70,11 +70,11 @@ export function HowItWorks() {
         <path d="M200 250 Q400 100 600 250 Q800 400 1000 250" stroke="#5D7A50" strokeWidth="1.5" strokeDasharray="8 8" />
       </svg>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+      <div className="relative z-10 w-full max-w-5xl px-6">
         <h2 className="animate-on-scroll text-center text-charcoal font-bold text-3xl sm:text-4xl mb-4">
           איך זה עובד?
         </h2>
-        <p className="animate-on-scroll stagger-1 text-center text-muted text-lg mb-14 max-w-md mx-auto">
+        <p className="animate-on-scroll stagger-1 text-center text-muted text-lg mb-14">
           שלושה צעדים פשוטים לחיבור עסקי אמיתי
         </p>
 

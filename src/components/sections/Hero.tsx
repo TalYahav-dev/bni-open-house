@@ -43,7 +43,7 @@ export function Hero() {
       </svg>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-6 py-20 text-center flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-3xl px-6 py-20 text-center flex flex-col items-center">
         {/* English title */}
         <p className="hero-animate text-sage font-semibold tracking-[0.25em] uppercase text-sm mb-5">
           Open House for Business

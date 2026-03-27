@@ -99,7 +99,7 @@ export function OpenHousesList() {
   const selectedHost = hosts.find((h) => h.id === signupModal);
 
   return (
-    <section id="open-houses" ref={sectionRef} className="py-20 sm:py-28 bg-cream relative overflow-hidden">
+    <section id="open-houses" ref={sectionRef} className="py-20 sm:py-28 bg-cream relative overflow-hidden w-full flex flex-col items-center">
       {/* Background blobs */}
       <div className="absolute top-[15%] right-[3%] w-72 h-72 rounded-full bg-taupe/[0.06] blur-3xl floating-shape-2" />
       <div className="absolute bottom-[10%] left-[5%] w-56 h-56 rounded-full bg-sage/[0.04] blur-3xl floating-shape-4" />
@@ -116,11 +116,11 @@ export function OpenHousesList() {
         <path d="M12.65 10A5.99 5.99 0 007 6c-3.31 0-6 2.69-6 6s2.69 6 6 6a5.99 5.99 0 005.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
       </svg>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+      <div className="relative z-10 w-full max-w-5xl px-6">
         <h2 className="animate-on-scroll text-center text-charcoal font-bold text-3xl sm:text-4xl mb-4">
           הבתים הפתוחים
         </h2>
-        <p className="animate-on-scroll stagger-1 text-center text-muted text-lg mb-14 max-w-md mx-auto">
+        <p className="animate-on-scroll stagger-1 text-center text-muted text-lg mb-14">
           בחרו מפגש שמתאים לכם והירשמו
         </p>
 
