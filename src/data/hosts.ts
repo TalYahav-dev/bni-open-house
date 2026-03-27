@@ -15,7 +15,7 @@ export const hosts: OpenHouseHost[] = [
   {
     id: '2',
     name: 'רינת נצרתי',
-    area: '',
+    area: 'זכריה חתוכה 8 דירה 31 קומה 8',
     day: 'יום ראשון',
     date: '29.3.2026',
     time: '11:00',
