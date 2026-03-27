@@ -1,9 +1,9 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Redis } from '@upstash/redis';
 
-const HOST_IDS = ['1', '2', '3', '4', '5', '6', '7', '8'];
+const HOST_IDS = ['1', '2', '3', '4', '5', '6'];
 const CAPACITIES: Record<string, number> = {
-  '1': 4, '2': 3, '3': 4, '4': 5, '5': 3, '6': 4, '7': 4, '8': 3,
+  '1': 5, '2': 5, '3': 5, '4': 5, '5': 5, '6': 5,
 };
 
 interface Signup {
@@ -36,13 +36,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const signups: Signup[] = (await redis.get('signups')) || [];
 
-    // Check capacity
     const hostSignups = signups.filter((s) => s.hostId === hostId);
     if (hostSignups.length >= CAPACITIES[hostId]) {
       return res.status(400).json({ error: 'המפגש מלא' });
     }
 
-    // Check duplicate
     const duplicate = signups.find(
       (s) => s.hostId === hostId && s.phone === phone
     );
@@ -50,7 +48,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ error: 'כבר נרשמת למפגש הזה' });
     }
 
-    // Add signup
     const newSignup: Signup = {
       hostId,
       name: name.trim(),
