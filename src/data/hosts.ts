@@ -26,7 +26,7 @@ export const hosts: OpenHouseHost[] = [
   {
     id: '3',
     name: 'ריטה מושיאקוב',
-    area: '',
+    area: 'התבור 7, באר יעקב',
     day: 'יום שני',
     date: '30.3.2026',
     time: '11:00',
