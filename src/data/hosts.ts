@@ -4,7 +4,7 @@ export const hosts: OpenHouseHost[] = [
   {
     id: '1',
     name: 'טל יהב',
-    area: 'בדישי',
+    area: 'הפרג 8, רחובות',
     day: 'יום ראשון',
     date: '29.3.2026',
     time: '21:30',
@@ -37,7 +37,7 @@ export const hosts: OpenHouseHost[] = [
   {
     id: '4',
     name: 'נדב וינינגר',
-    area: '',
+    area: 'חיים מלר 26, מזכרת בתיה',
     day: 'יום שני',
     date: '30.3.2026',
     time: '15:00',
@@ -48,7 +48,7 @@ export const hosts: OpenHouseHost[] = [
   {
     id: '5',
     name: 'נועה קריספל',
-    area: '',
+    area: 'אלוף דוד 203, רמת גן',
     day: 'יום שלישי',
     date: '31.3.2026',
     time: '10:30',
@@ -59,7 +59,7 @@ export const hosts: OpenHouseHost[] = [
   {
     id: '6',
     name: 'רבקה שפירר',
-    area: '',
+    area: 'צאלון 4, רחובות',
     day: 'יום שני',
     date: '6.4.2026',
     time: '10:30',
