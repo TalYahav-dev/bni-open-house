@@ -128,7 +128,7 @@ export function OpenHousesList() {
           {hosts.map((host, i) => (
             <div
               key={host.id}
-              className={`animate-on-scroll stagger-${Math.min(i + 1, 5)} flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]`}
+              className={`animate-on-scroll stagger-${Math.min(i + 1, 5)} flex flex-col w-full sm:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]`}
             >
               <HostCard
                 host={host}
