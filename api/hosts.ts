@@ -8,7 +8,7 @@ const hosts = [
   { id: '4', name: 'נדב וינינגר', area: 'חיים מלר 26, מזכרת בתיה', day: 'יום שני', date: '30.3.2026', time: '15:00', capacity: 6, hasSafeRoom: true, hostingNote: '' },
   { id: '5', name: 'נועה קריספל', area: 'אלוף דוד 203, רמת גן', day: 'יום שלישי', date: '31.3.2026', time: '10:30', capacity: 6, hasSafeRoom: true, hostingNote: '' },
   { id: '6', name: 'רבקה שפירר', area: 'צאלון 4, רחובות', day: 'יום שני', date: '6.4.2026', time: '10:30', capacity: 6, hasSafeRoom: true, hostingNote: '' },
-  { id: '7', name: 'שרון רונס-מקמל', area: 'פרופ׳ יהודית בירק 3, רחובות', day: 'יום שני', date: '30.3.2026', time: '09:30', capacity: 6, hasSafeRoom: true, hostingNote: '' },
+  { id: '7', name: 'שרון רונס-מקמל', area: 'פרופ׳ יהודית בירק 3, רחובות', day: 'יום שלישי', date: '31.3.2026', time: '21:30', capacity: 6, hasSafeRoom: true, hostingNote: '' },
 ];
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
