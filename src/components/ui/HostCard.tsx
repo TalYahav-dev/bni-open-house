@@ -14,15 +14,26 @@ function getStatus(host: HostWithSignups): HostStatus {
   return 'available';
 }
 
+function isPast(dateStr: string): boolean {
+  const [day, month, year] = dateStr.split('.').map(Number);
+  const meetingDate = new Date(year, month - 1, day);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return meetingDate < today;
+}
+
 export function HostCard({ host, onSignup }: HostCardProps) {
   const status = getStatus(host);
   const remaining = host.capacity - host.signupCount;
   const isFull = status === 'full';
+  const past = isPast(host.date);
 
   return (
     <div
       className={`bg-card rounded-2xl border border-border p-6 flex flex-col gap-4 h-full shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-all duration-300 ${
-        isFull
+        past
+          ? 'opacity-40 grayscale pointer-events-none'
+          : isFull
           ? 'opacity-50 grayscale-[30%]'
           : 'hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] hover:-translate-y-1 cursor-default'
       }`}
@@ -96,10 +107,10 @@ export function HostCard({ host, onSignup }: HostCardProps) {
         <Button
           variant="primary"
           className="w-full text-sm"
-          disabled={isFull}
+          disabled={isFull || past}
           onClick={() => onSignup(host.id)}
         >
-          {isFull ? 'המפגש מלא' : 'להרשמה למפגש'}
+          {past ? 'המפגש עבר' : isFull ? 'המפגש מלא' : 'להרשמה למפגש'}
         </Button>
       </div>
     </div>
