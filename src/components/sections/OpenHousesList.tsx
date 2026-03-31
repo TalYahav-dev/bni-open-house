@@ -6,7 +6,7 @@ import { Button } from '../ui/Button';
 
 // Start with static data (0 signups), then hydrate from API
 function initialHosts(): HostWithSignups[] {
-  return staticHosts.map((h) => ({ ...h, signupCount: 0 }));
+  return staticHosts.map((h) => ({ ...h, signupCount: 0, attendees: [] }));
 }
 
 export function OpenHousesList() {

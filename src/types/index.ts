@@ -12,6 +12,7 @@ export interface OpenHouseHost {
 
 export interface HostWithSignups extends OpenHouseHost {
   signupCount: number;
+  attendees: string[];
 }
 
 export interface Signup {

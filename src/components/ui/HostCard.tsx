@@ -95,6 +95,20 @@ export function HostCard({ host, onSignup }: HostCardProps) {
         </div>
       )}
 
+      {/* Attendees */}
+      {host.attendees.length > 0 && (
+        <div className="flex flex-col gap-1.5">
+          <p className="text-xs font-semibold text-muted uppercase tracking-wide">מגיעים</p>
+          <div className="flex flex-wrap gap-1.5">
+            {host.attendees.map((name) => (
+              <span key={name} className="text-xs bg-sage/10 text-sage font-medium px-2 py-0.5 rounded-full">
+                {name}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Hosting note */}
       {host.hostingNote && (
         <p className="text-sm text-muted italic border-r-2 border-sage/30 pr-3">

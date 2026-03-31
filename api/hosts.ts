@@ -24,13 +24,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const signups: any[] = (await redis.get('signups')) || [];
 
-    const hostsWithSignups = hosts.map((host) => ({
-      ...host,
-      signupCount: signups.filter((s: any) => s.hostId === host.id).length,
-    }));
+    const hostsWithSignups = hosts.map((host) => {
+      const hostSignups = signups.filter((s: any) => s.hostId === host.id);
+      return {
+        ...host,
+        signupCount: hostSignups.length,
+        attendees: hostSignups.map((s: any) => s.name),
+      };
+    });
 
     return res.status(200).json(hostsWithSignups);
   } catch {
-    return res.status(200).json(hosts.map((h) => ({ ...h, signupCount: 0 })));
+    return res.status(200).json(hosts.map((h) => ({ ...h, signupCount: 0, attendees: [] })));
   }
 }
